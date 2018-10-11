@@ -33,6 +33,7 @@ public class TestHotel
         //Invoking testServiceChargeOrigin method to test addServiceCharge method in Booking class
         testServiceChargeOrigin(booking);
         
+        
     }
     //Since getCharges method always returns 0 total of service charge is zero-#bug
      public static void testServiceChargeOrigin(Booking booking) 
@@ -60,5 +61,5 @@ public class TestHotel
         }
         
     }
-    
+   
 }
