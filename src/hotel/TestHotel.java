@@ -30,8 +30,9 @@ public class TestHotel
         CreditCard creditCard = new CreditCard(CreditCardType.VISA, 1, 111);
         Booking booking = new Booking(guest, room,new Date() , 10, 1, creditCard);
         
-        //Invoking testServiceChargeOrigin method
+        //Invoking testServiceChargeOrigin method to test addServiceCharge method in Booking class
         testServiceChargeOrigin(booking);
+        
         
     }
     //Since getCharges method always returns 0 total of service charge is zero-#bug
@@ -39,7 +40,8 @@ public class TestHotel
     {
         double costOne=100;
         double actualTotal=  costOne;
-        
+       
+        System.out.println("Testing addServiceCharge method in Booking class");
         booking.addServiceCharge(ServiceType.BAR_FRIDGE,  costOne);
         double total = 0;
         //Bug spotted in booking.getCharges method
@@ -59,5 +61,5 @@ public class TestHotel
         }
         
     }
-    
+   
 }
