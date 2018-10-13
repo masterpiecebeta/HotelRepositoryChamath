@@ -46,7 +46,8 @@ public class TestHotel
         double costOne=100;
         double actualTotal=  costOne;
        
-        
+        booking.checkIn();
+        System.out.println("Room Checked in");
         System.out.println("Testing addServiceCharge method in Booking class");
         booking.addServiceCharge(ServiceType.BAR_FRIDGE,  costOne);
         double total = 0;
