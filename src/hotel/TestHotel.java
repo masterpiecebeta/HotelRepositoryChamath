@@ -31,10 +31,13 @@ public class TestHotel
         Room room = new Room(101, RoomType. SINGLE);
         CreditCard creditCard = new CreditCard(CreditCardType.VISA, 1, 111);
         Booking booking = new Booking(guest, room,new Date() , 10, 1, creditCard);
-        
+        Hotel hotel = new Hotel();
         
         //Invoking testServiceChargeOrigin method to test addServiceCharge method in Booking class
-        testServiceChargeOrigin(booking);
+        //testServiceChargeOrigin(booking);
+        //Invoking testServiceChargeOrigin method to test addServiceCharge method in Booking class
+        testCheckedOutRecordService( booking,hotel);
+        
         
     }
     //Since getCharges method always returns 0 total of service charge is zero-#bug
@@ -64,6 +67,14 @@ public class TestHotel
         }
         
     }
+     public static void testCheckedOutRecordService( Booking booking, Hotel hotel) {
+         
+         booking.checkIn(); 
+         booking.checkOut();
+         System.out.println("Recording a new service..........");  
+         booking.addServiceCharge(ServiceType.BAR_FRIDGE, 100);
+         
+        }
     
     
    
