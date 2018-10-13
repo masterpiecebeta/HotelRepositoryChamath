@@ -54,10 +54,14 @@ public class RecordServiceCTL {
 			String mesg = String.format("PayForServiceCTL: serviceDetailsEntered : bad state : %s", state);
 			throw new RuntimeException(mesg);
 		}
+                
 		hotel.addServiceCharge(roomNumber, serviceType, cost);
-		
-		recordServiceUI.displayServiceChargeMessage(roomNumber, cost, serviceType.getDescription());
-		state = State.COMPLETED;
+		if(booking.isCheckedIn())
+                {
+                    recordServiceUI.displayServiceChargeMessage(roomNumber, cost, serviceType.getDescription());
+                }
+                
+                state = State.COMPLETED;
 		recordServiceUI.setState(RecordServiceUI.State.COMPLETED);
 	}
 

@@ -135,16 +135,29 @@ public class Booking {
 
 	public void checkIn() {
 		room.checkin();
+                //Fix
+                state = State.CHECKED_IN;
 	}
 
         
 	public void addServiceCharge(ServiceType serviceType, double cost) {
-		charges.add(new ServiceCharge(serviceType, cost));
+		
+            if( isCheckedIn())
+            {
+                charges.add(new ServiceCharge(serviceType, cost));
+                System.out.println("Service charge added");
+            }
+            else 
+            {
+                System.out.println("Room is not checked in , Record service is aborted");
+            }
 	}
 
 
 	public void checkOut() {
 		room.checkout(this);
+                //Fix
+                state = State.CHECKED_OUT;
 	}
 
 }
