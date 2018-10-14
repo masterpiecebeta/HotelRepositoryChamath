@@ -34,9 +34,9 @@ public class TestHotel
         Hotel hotel = new Hotel();
         
         //Invoking testServiceChargeOrigin method to test addServiceCharge method in Booking class
-        //testServiceChargeOrigin(booking);
+        testServiceChargeOrigin(booking);
         //Invoking testServiceChargeOrigin method to test addServiceCharge method in Booking class
-        testCheckedOutRecordService( booking,hotel);
+        //testCheckedOutRecordService( booking,hotel);
         
         
     }
@@ -58,6 +58,8 @@ public class TestHotel
             total += sc.getCost();
 							
         }
+        booking.checkOut();
+        System.out.println("Room Checked out");
         if(total==actualTotal)
         {
             System.out.println("Test pass");
