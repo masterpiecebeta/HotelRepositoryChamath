@@ -1,0 +1,4 @@
+Bug 1 UAT file name -UAT+Test+Script+Zero service charge after checkout
+Bug 2 UAT file name -UAT+Test+Script + record services after checkout
+
+Test class name - TestHotel
