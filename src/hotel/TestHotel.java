@@ -34,9 +34,9 @@ public class TestHotel
         Hotel hotel = new Hotel();
         
         //Invoking testServiceChargeOrigin method to test addServiceCharge method in Booking class
-        testServiceChargeOrigin(booking);
+        //testServiceChargeOrigin(booking);
         //Invoking testServiceChargeOrigin method to test addServiceCharge method in Booking class
-        //testCheckedOutRecordService( booking,hotel);
+        testCheckedOutRecordService( booking,hotel);
         
         
     }
@@ -73,7 +73,9 @@ public class TestHotel
      public static void testCheckedOutRecordService( Booking booking, Hotel hotel) {
          
          booking.checkIn(); 
+         System.out.println("Booking checked in");  
          booking.checkOut();
+         System.out.println("Booking checked out");  
          System.out.println("Recording a new service..........");  
          booking.addServiceCharge(ServiceType.BAR_FRIDGE, 100);
          

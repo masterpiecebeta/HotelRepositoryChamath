@@ -140,7 +140,7 @@ public class Booking {
 	}
 
         
-	public void addServiceCharge(ServiceType serviceType, double cost) {
+        public void addServiceCharge(ServiceType serviceType, double cost) {
 		
             if( isCheckedIn())
             {
